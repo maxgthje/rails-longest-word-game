@@ -1,0 +1,16 @@
+<h1>Games#score</h1>
+<p>Find me in app/views/games/score.html.erb</p>
+
+<%= params[:input] %>
+
+<% if @found && @exits %>
+<p><%= params[:input] %> found in dictionary and a valid word for game</p>
+<% elsif !@found && @exits %>
+<p><%= params[:input] %> not found in dictionary but a valid word for game</p>
+<% elsif !@found && !@exits %>
+<p><%= params[:input] %> not found in dictionary and not a valid word for game</p>
+<% elsif @found && !@exits %>
+<p><%= params[:input] %> found in dictionary but not a valid word for game</p>
+<% end %>
+
+<%= link_to 'Play again', new_path %>
